@@ -1,4 +1,4 @@
-import { View, StyleSheet,Text, TextInput } from "react-native"
+import { View, StyleSheet, TextInput, Alert } from "react-native"
 import PrimaryButton from "./PrimaryButton"
 import { useNavigation } from "@react-navigation/native"
 import { useContext, useState } from "react"
@@ -32,7 +32,11 @@ const InputButtonContainer=()=>{
             navigation.navigate('GameScreen')
             return
         }
-        //alert
+        Alert.alert(
+            'Invalid Input',
+            'Entered Number must be between 1 and 99',
+            [{text:'OK', style:'destructive',onPress: resetInput}]
+            )
     }
 
     return(

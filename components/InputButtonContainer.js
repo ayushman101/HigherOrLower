@@ -18,7 +18,6 @@ const InputButtonContainer=()=>{
         return true
     }
 
-
     const resetInput=()=>{
         setCurrentInput('')
     }

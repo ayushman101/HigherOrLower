@@ -5,8 +5,6 @@ const AppContext= createContext('light');
 
 export const ContextProvider=({children})=>{
 
-    
-
     const [userInput, setUserInput]=useState(0);
     const [guessList, setGuessList]=useState([]);
     

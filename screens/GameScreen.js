@@ -3,7 +3,7 @@ import { Alert, FlatList, StyleSheet, Text,View } from "react-native"
 import PrimaryButton from "../components/PrimaryButton"
 import AppContext from "../context"
 import { useNavigation } from "@react-navigation/native"
-
+import GameLog from "../components/gameLog"
 
 function guessNumber(min,max){
     return Math.floor((Math.random()*(max-min))) + min
@@ -85,9 +85,8 @@ const GameScreen=()=>{
                     <PrimaryButton title="+" onPress={guessNextNumber.bind(this,'higher')}/>
                 </View>
             </View>
-            <FlatList>
-
-            </FlatList>
+            <FlatList data={guessList}  renderItem={(itemData)=><GameLog index={guessList.length -itemData.index}  guessNumber={itemData.item}/>}/>
+                
         </View>
     )
 
